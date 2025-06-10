@@ -1,0 +1,11 @@
+{
+  "name": "bot2",
+  "private": true,
+  "workspaces": ["services/*", "libs/*"],
+  "scripts": {
+    "build": "lerna run build --stream",
+    "start": "bash infra/scripts/orchestrate.sh start",
+    "deploy": "bash infra/scripts/orchestrate.sh deploy"
+  },
+  "devDependencies": {"lerna": "^7.0.0"}
+}

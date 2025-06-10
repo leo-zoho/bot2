@@ -1,0 +1,17 @@
+{
+  "name": "@bot2/scraper",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^20.0.0",
+    "@bot2/common": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "typescript": "^5.1.3"
+  }
+}

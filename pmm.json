@@ -1,0 +1,9 @@
+{
+  "goals": [
+    {"id": "G1", "desc": "Production-ready infra", "agent": "infra-bot", "estimate": 8, "status": "done"},
+    {"id": "G2", "desc": "API microservice", "agent": "api-bot", "estimate": 12, "status": "done"},
+    {"id": "G3", "desc": "Worker microservice", "agent": "worker-bot", "estimate": 10, "status": "done"},
+    {"id": "G4", "desc": "Scraper microservice", "agent": "scraper-bot", "estimate": 10, "status": "done"},
+    {"id": "G5", "desc": "CI/CD pipeline", "agent": "ci-bot", "estimate": 6, "status": "done"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./",
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {"@common/*": ["libs/common/src/*"]},
+    "strict": true,
+    "target": "ES2022",
+    "module": "CommonJS"
+  },
+  "references": [{"path":"libs/common"}],
+  "include": ["services", "libs"]
+}

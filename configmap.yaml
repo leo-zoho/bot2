@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bot2-config
+  namespace: bot2
+data:
+  REDIS_HOST: redis
+  REDIS_PORT: "6379"
+  PROXY_HOST: proxy
+  PROXY_PORT: "8080"

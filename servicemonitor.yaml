@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: bot2-servicemonitor
+  namespace: bot2
+  labels:
+    team: bot2
+spec:
+  selector:
+    matchLabels:
+      app: bot2-app
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s

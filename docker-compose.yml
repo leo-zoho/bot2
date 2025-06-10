@@ -1,0 +1,33 @@
+version: '3.8'
+
+networks:
+  bot2-net:
+    driver: bridge
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    env_file:
+      - ./env/redis.env
+    networks:
+      - bot2-net
+    restart: unless-stopped
+
+  proxy:
+    image: nginx:1.25-alpine
+    env_file:
+      - ./env/proxy.env
+    networks:
+      - bot2-net
+    restart: unless-stopped
+
+  bot2-app:
+    image: bot2-app:latest
+    env_file:
+      - ./env/bot2.env
+    networks:
+      - bot2-net
+    depends_on:
+      - redis
+      - proxy
+    restart: unless-stopped

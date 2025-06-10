@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: bot2-prometheus
+  namespace: bot2
+spec:
+  serviceAccountName: bot2-sa
+  serviceMonitorSelector:
+    matchLabels:
+      team: bot2
+  resources:
+    requests:
+      memory: 400Mi
+      cpu: 200m

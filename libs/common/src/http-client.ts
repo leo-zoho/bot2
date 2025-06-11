@@ -1,0 +1,1 @@
+// Add shared HTTP client utilities here as needed for bot2 microservices

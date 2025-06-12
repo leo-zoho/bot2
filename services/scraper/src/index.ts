@@ -2,6 +2,8 @@ import puppeteer from 'puppeteer';
 import { ProxyManager } from '@bot2/common';
 import { setupMetrics, scrapeCounter } from './metrics';
 
+declare module '@bot2/common';
+
 async function scrapePage(url: string): Promise<string> {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();

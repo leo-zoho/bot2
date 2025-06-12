@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot2-app
+  namespace: bot2
+  labels:
+    app: bot2-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bot2-app
+  template:
+    metadata:
+      labels:
+        app: bot2-app
+    spec:
+      containers:
+        - name: bot2-app
+          image: bot2-app:latest
+          envFrom:
+            - configMapRef:
+                name: bot2-config
+            - secretRef:
+                name: bot2-secrets
+          ports:
+            - containerPort: 8080
+        - name: redis
+          image: redis:7.2-alpine
+          ports:
+            - containerPort: 6379
+        - name: proxy
+          image: nginx:1.25-alpine
+          ports:
+            - containerPort: 8080

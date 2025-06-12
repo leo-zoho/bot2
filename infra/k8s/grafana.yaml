@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Grafana
+metadata:
+  name: bot2-grafana
+  namespace: bot2
+spec:
+  config:
+    log:
+      mode: "console"
+      level: "info"
+  resources:
+    requests:
+      memory: 200Mi
+      cpu: 100m
